@@ -6,7 +6,7 @@ useSeoMeta({
   title: page.value.title,
   ogTitle: page.value.title,
   description: page.value.description,
-  ogDescription: page.value.description
+  ogDescription: page.value.description,
 })
 </script>
 
@@ -16,7 +16,7 @@ useSeoMeta({
       v-if="page.hero"
       v-bind="page.hero"
     >
-      <template #headline>
+      <template v-if="false" #headline>
         <UBadge
           v-if="page.hero.headline"
           variant="subtle"
@@ -49,13 +49,13 @@ useSeoMeta({
         <MDC :value="page.hero.title" />
       </template>
 
-      <MDC
+      <!-- <MDC
         :value="page.hero.code"
         class="prose prose-primary dark:prose-invert mx-auto"
-      />
+      /> -->
     </ULandingHero>
 
-    <ULandingSection
+    <!-- <ULandingSection
       :title="page.features.title"
       :links="page.features.links"
     >
@@ -66,6 +66,6 @@ useSeoMeta({
           v-bind="item"
         />
       </UPageGrid>
-    </ULandingSection>
+    </ULandingSection> -->
   </div>
 </template>
