@@ -10,7 +10,7 @@ hero:
     to: https://ui.nuxt.com/pro
     icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
-    - label: Browse All Writing
+    - label: Browse All Publications
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: /getting-started
@@ -26,15 +26,15 @@ hero:
     npx nuxi init -t github:nuxt-ui-pro/docs
     ```
 features:
-  title: All-in-one docs template
-  links:
-    - label: Explore Camila Alfonso
-      icon: i-simple-icons-nuxtdotjs
-      trailingIcon: i-heroicons-arrow-right-20-solid
-      color: gray
-      to: 'https://ui.nuxt.com/pro'
-      target: _blank
-      size: lg
+  title: Recent Publications
+  # links:
+  #   - label: Explore Camila Alfonso
+  #     icon: i-simple-icons-nuxtdotjs
+  #     trailingIcon: i-heroicons-arrow-right-20-solid
+  #     color: gray
+  #     to: 'https://ui.nuxt.com/pro'
+  #     target: _blank
+  #     size: lg
   items:
     - title: Nuxt 3
       description: Powered by Nuxt 3 for optimal performances and SEO.
