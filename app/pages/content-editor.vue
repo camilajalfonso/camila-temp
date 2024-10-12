@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'articles',
+  layout: 'articles'
 })
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
@@ -11,12 +11,12 @@ useSeoMeta({
   title: page.value.title,
   ogTitle: page.value.title,
   description: page.value.description,
-  ogDescription: page.value.description,
+  ogDescription: page.value.description
 })
 </script>
 
 <template>
-  <div>
+  <div class="bdr bdt">
     <!-- <ULandingHero
       v-if="page.hero"
       v-bind="page.hero"
