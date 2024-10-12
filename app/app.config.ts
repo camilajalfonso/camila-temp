@@ -24,7 +24,7 @@ export default defineAppConfig({
       {
         label: 'Content',
         icon: 'i-heroicons-book-open',
-        to: '/content-editor',
+        to: '/articles',
       },
       // {
       //   'icon': 'i-simple-icons-github',
