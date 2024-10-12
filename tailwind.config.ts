@@ -1,30 +1,30 @@
 import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
 import defaultTheme from 'tailwindcss/defaultTheme'
+import plugin from 'tailwindcss/plugin'
 
 export default <Partial<Config>>{
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(({ addUtilities }) => {
       addUtilities({
         '.bdr': {
-          border: '1px dotted red'
+          border: '1px dotted red',
         },
         '.bdb': {
-          border: '1px dotted blue'
+          border: '1px dotted blue',
         },
         '.bdt': {
-          'border-width': '2px'
+          'border-width': '2px',
         },
         '.my-shadow': {
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
-        }
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+        },
       })
-    })
+    }),
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', ...defaultTheme.fontFamily.sans]
+        sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         green: {
@@ -38,9 +38,9 @@ export default <Partial<Config>>{
           700: '#007F45',
           800: '#016538',
           900: '#0A5331',
-          950: '#052e16'
-        }
-      }
-    }
-  }
+          950: '#052e16',
+        },
+      },
+    },
+  },
 }

@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxthq/studio',
-    'nuxt-og-image'
+    'nuxt-og-image',
   ],
 
   hooks: {
@@ -18,46 +18,46 @@ export default defineNuxtConfig({
       const globals = components.filter(c => ['UButton', 'UIcon'].includes(c.pascalName))
 
       globals.forEach(c => c.global = true)
-    }
+    },
   },
 
   colorMode: {
-    disableTransition: true
+    disableTransition: true,
   },
 
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
       ],
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 
   routeRules: {
-    '/api/search.json': { prerender: true }
+    '/api/search.json': { prerender: true },
   },
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
 
   typescript: {
-    strict: false
+    strict: false,
   },
 
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
 
   eslint: {
     config: {
       stylistic: {
         commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
+        braceStyle: '1tbs',
+      },
+    },
   },
 
-  compatibilityDate: '2024-07-11'
+  compatibilityDate: '2024-07-11',
 })

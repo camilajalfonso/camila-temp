@@ -1,7 +1,8 @@
 {
   "name": "nuxt-ui-pro-template-docs",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.12.1",
   "scripts": {
     "build": "nuxt build",
     "clean": "rm -rf node_modules && pnpm i",
@@ -32,6 +33,5 @@
   },
   "resolutions": {
     "@nuxtjs/tailwindcss": "nightly"
-  },
-  "packageManager": "pnpm@9.12.1"
+  }
 }

@@ -112,10 +112,10 @@ Add this module to your `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  ...
+  // ...
   modules: [
-    ...
-    '@nuxthq/studio'
+    // other modules ...
+    '@nuxthq/studio',
   ]
 })
 ```
