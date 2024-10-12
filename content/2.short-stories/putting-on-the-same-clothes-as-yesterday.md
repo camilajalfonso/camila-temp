@@ -1,5 +1,5 @@
 ---
-title: Putting on the same clothes as yesterday
+title: Putting On The Same Clothes As Yesterday
 slug: "putting-on-the-same-clothes-as-yesterday"
 date: 8/30/2024
 draft: false
