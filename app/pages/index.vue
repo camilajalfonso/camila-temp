@@ -11,7 +11,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
+  <div class="bdr bdt">
     <ULandingHero
       v-if="page.hero"
       v-bind="page.hero"

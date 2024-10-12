@@ -28,6 +28,7 @@ useSeoMeta({
 
 defineOgImage({
   component: 'Docs',
+  // @ts-expect-error FIXME: TS error
   title: page.value.title,
   description: page.value.description
 })
