@@ -1,7 +1,26 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.bdr': {
+          border: '1px dotted red'
+        },
+        '.bdb': {
+          border: '1px dotted blue'
+        },
+        '.bdt': {
+          'border-width': '2px'
+        },
+        '.my-shadow': {
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+        }
+      })
+    })
+  ],
   theme: {
     extend: {
       fontFamily: {
