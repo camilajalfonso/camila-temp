@@ -13,7 +13,7 @@ categories:
 - short-stories
 authors:
   - name: Camila Alfonso
-    avatar: /iimages/cami-avatar-1.png
+    avatar: /images/cami-avatar-1.png
     social: https://www.instagram.com/camilajalfonso
 publishedAt: 2024-01-30
 ---
