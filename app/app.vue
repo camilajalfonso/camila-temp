@@ -33,7 +33,7 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <div>
+  <div class="bdb bdt">
     <NuxtLoadingIndicator />
 
     <AppHeader />
@@ -54,5 +54,9 @@ provide('navigation', navigation)
     </ClientOnly>
 
     <UNotifications />
+
+    <ClientOnly>
+      <QePanel />
+    </ClientOnly>
   </div>
 </template>
