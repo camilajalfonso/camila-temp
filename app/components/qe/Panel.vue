@@ -12,13 +12,11 @@ interface Settings {
 let settings: Settings = {
   enabled,
   qeToolsToggle,
+  editorMode: false,
 }
 const qeState = useStorage('pibe-cms', settings, null, { mergeDefaults: true })
 const environment = import.meta.env
 const isDev = import.meta.env.DEV
-
-console.info(':::environment', environment)
-console.info(':::isDev', isDev)
 
 const showQETools = computed(() => qeState.value.enabled)
 const containerClassess = computed(() => ({
@@ -28,10 +26,17 @@ const containerClassess = computed(() => ({
 
 const overrideFeatureList = [
   {
+    key: 'editorMode',
+    label: 'Editor Mode',
+    type: 'toggle',
+    value: false,
+  },
+  {
     key: 'consoleLogs',
     label: 'Logs',
     type: 'toggle',
     value: false,
+    disabled: false,
   },
   // {
   //   key: 'consoleLogsPinia',
@@ -39,12 +44,12 @@ const overrideFeatureList = [
   //   type: 'toggle',
   //   value: false,
   // },
-  {
-    key: 'consoleLogsVerbose',
-    label: 'Logs Verbose',
-    type: 'toggle',
-    value: false,
-  },
+  // {
+  //   key: 'consoleLogsVerbose',
+  //   label: 'Logs Verbose',
+  //   type: 'toggle',
+  //   value: false,
+  // },
   {
     key: 'debugPanelPos',
     label: 'Debug Panel Position',
@@ -56,18 +61,18 @@ const overrideFeatureList = [
   //   type: 'toggle',
   //   value: false,
   // },
-  {
-    key: 'envInfo',
-    label: 'Environment',
-    type: 'toggle',
-    value: false,
-  },
-  {
-    key: 'breakpointsDebug',
-    label: 'Breakpoints',
-    type: 'toggle',
-    value: false,
-  },
+  // {
+  //   key: 'envInfo',
+  //   label: 'Environment',
+  //   type: 'toggle',
+  //   value: false,
+  // },
+  // {
+  //   key: 'breakpointsDebug',
+  //   label: 'Breakpoints',
+  //   type: 'toggle',
+  //   value: false,
+  // },
 ]
 const defaultFeatures = overrideFeatureList.reduce((acc, curr) => {
   acc[curr.key] = curr.value
@@ -116,7 +121,7 @@ if (qeToolsToggle || isDev) {
     <div class="flex justify-between gap-x-4 text-xs">
       <div flex items-center>
         <h2 class="mr-2 text-base text-blue-6 font-semibold">
-          QE Tools
+          QE Tools ({{ environment.MODE }} env.)
         </h2>
 
         <button @click="qeState.qeToolsToggle = !qeState.qeToolsToggle">
@@ -156,7 +161,28 @@ if (qeToolsToggle || isDev) {
       </div>
     </div>
     <div>
-      <pre text-debug-pre>debugPanelPos: {{ qeState.debugPanelPos }}</pre>
+      <div class="flex flex-wrap items-baseline justify-start gap-x-4 text-xs text-gray-500">
+        <template
+          v-for="(feat, idx) in overrideFeatureList.filter(x => x.type === 'toggle' && !x.disabled)"
+          :key="idx"
+        >
+          <UFormGroup :label="feat.label" class="flex gap-x-1 items-center flex-row-reverse">
+            <UToggle
+              v-model="qeState[feat.key]"
+            />
+          </UFormGroup>
+        </template>
+
+        <!-- <bricks-switch
+          v-for="(feat, idx) in overrideFeatureList.filter(x => x.type === 'toggle' && !x.disabled)"
+          :key="idx"
+          :checked="qeState[feat.key]"
+          size="small"
+          @bricks-switch-change="qeState[feat.key] = $event.target.checked"
+        >
+          {{ feat.label }}
+        </bricks-switch> -->
+      </div>
     </div>
   </div>
 </template>
