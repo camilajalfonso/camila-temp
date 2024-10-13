@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
 
   modules: [
+    '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -11,6 +12,16 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     'nuxt-og-image',
   ],
+
+  imports: {
+    autoImport: true,
+    global: true,
+    dirs: [
+      // '~/**/composables/**',
+      // '~/**/components/**',
+      '~/**/composables/**/!(*.test)',
+    ]
+  },
 
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
