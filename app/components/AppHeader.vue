@@ -38,6 +38,8 @@ const { header } = useAppConfig()
 
       <UColorModeButton v-if="header?.colorMode" />
 
+      <QePanelToggle class="mt-2" />
+
       <template v-if="header?.links">
         <UButton
           v-for="(link, index) of header.links"

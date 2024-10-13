@@ -7,6 +7,7 @@ export function useQePanel() {
     consoleLogsVerbose: false,
     enabled: false,
     qeToolsToggle: false,
+    editorMode: false,
   }
   const qeState = useStorage('pibe-cms', settings, localStorage, { mergeDefaults: true })
 

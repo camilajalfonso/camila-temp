@@ -7,6 +7,7 @@ definePageMeta({
 
 const route = useRoute()
 const { toc, seo } = useAppConfig()
+const { qeState } = useQePanel()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
@@ -71,7 +72,7 @@ const links = computed(() => [toc?.bottom?.edit && {
         :links="page.body?.toc?.links"
       >
         <template
-          v-if="toc?.bottom"
+          v-if="toc?.bottom && qeState.editorMode"
           #bottom
         >
           <div
