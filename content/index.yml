@@ -10,7 +10,7 @@ hero:
     to: https://ui.nuxt.com/pro
     icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
-    - label: Browse All Publications
+    - label: Browse All Of My Publications
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: /getting-started

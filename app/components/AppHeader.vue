@@ -38,7 +38,9 @@ const { header } = useAppConfig()
 
       <UColorModeButton v-if="header?.colorMode" />
 
-      <QePanelToggle class="mt-2" />
+      <ClientOnly>
+        <QePanelToggle class="mt-2" />
+      </ClientOnly>
 
       <template v-if="header?.links">
         <UButton

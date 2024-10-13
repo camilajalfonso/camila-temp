@@ -45,9 +45,9 @@ export default defineAppConfig({
     }],
   },
   toc: {
-    title: 'Table of Contents',
+    title: 'Contents',
     bottom: {
-      title: 'Community',
+      title: 'Editor',
       edit: 'https://github.com/camilajalfonso/camilaalfonso/edit/main/content',
       links: [
         //   {
